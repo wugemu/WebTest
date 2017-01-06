@@ -30,7 +30,9 @@ cacheMax最大缓存容量，只对noCacheList中的文件不进行缓存（字�
 	CacheUtil.loadUrl(WebView webview, Content content, String url, Map<String ,String> headpara);
 
 该方法实现webview加载与 html内容请求异步，html内容获取后会立即展示，无需等待资源加载完成，并缓存到本地可同步更新，使用此方法可以实现离线模式(缓存文件完全)。
+
 注： html5中有请求时，需要实现跨域设置；
+
 2缓存机制优化
 
 	webView.setWebViewClien(new WebViewClientCache());
