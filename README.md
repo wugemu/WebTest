@@ -1,5 +1,7 @@
 android html5页面加载缓存优化
-Cache使用：
+
+LZCache使用
+
 Application中初始化 代码如下：
 
 	//初始化
