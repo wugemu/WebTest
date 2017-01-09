@@ -39,18 +39,21 @@ public class CacheUtil {
     public static List<String> cacheList;
     public static boolean readCache;
     //默认所有页面做缓存处理
-    public static void initAllCache(long cacheMax,List<String> noCacheList){
+    public static void initAllCache(String dirStr,long cacheMax,List<String> noCacheList){
         CacheUtil.noCacheList=noCacheList;
 
-        init(cacheMax,true);
+        init(dirStr,cacheMax,true);
     }
     //默认所有页面不做缓存处理
-    public static void initOnlyCache(long cacheMax,List<String> cacheList){
+    public static void initOnlyCache(String dirStr,long cacheMax,List<String> cacheList){
         CacheUtil.cacheList=cacheList;
 
-        init(cacheMax, false);
+        init(dirStr,cacheMax, false);
     }
-    public static void init(long cacheMax, boolean readCache){
+    public static void init(String dirStr,long cacheMax, boolean readCache){
+        if(TextUtils.isEmpty(dirStr)){
+            dirStr="/webtest/cache";
+        }
         CacheUtil.cacheMax=cacheMax;
         CacheUtil.readCache=readCache;
         if(CacheUtil.noCacheList==null){
@@ -59,7 +62,7 @@ public class CacheUtil {
         if(CacheUtil.cacheList==null){
             CacheUtil.cacheList=new ArrayList<String>();
         }
-        appCacheDir = getCacheDir() + "/webtest/cache";
+        appCacheDir = getCacheDir() + dirStr;
         if(CacheUtil.noCacheList==null){
             CacheUtil.noCacheList=new ArrayList<String>();
         }

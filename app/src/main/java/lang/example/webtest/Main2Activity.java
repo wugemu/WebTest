@@ -45,7 +45,7 @@ public class Main2Activity extends AppCompatActivity {
         //cacheList.add("/activitAll.shtml");//活动页 变动频繁的不进行缓存
         cacheList.add(".action?");//页面请求
         //初始化
-        CacheUtil.initOnlyCache(512 * 1024 * 1024, cacheList);//最大缓存512MB
+        CacheUtil.initOnlyCache("/webtest/cache2",512 * 1024 * 1024, cacheList);//最大缓存512MB
 
 
         setting.setCacheMode(WebSettings.LOAD_NO_CACHE);
@@ -74,7 +74,7 @@ public class Main2Activity extends AppCompatActivity {
 
         fab.setOnClickListener(new View.OnClickListener() {
             //final String url = "http://192.168.1.168:8080/WebTest/activityV2.html";
-            final String url = "http://m.mogujie.com/";
+            final String url = "http://m.jd.com/";
             @Override
             public void onClick(View view) {
                 //使用此方法需要跨域 优化首次加载方式
